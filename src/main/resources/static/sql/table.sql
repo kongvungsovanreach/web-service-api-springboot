@@ -1,0 +1,5 @@
+create table tb_articles(id int auto_increment, title varchar,category_id int,author varchar,description varchar, thumbnail varchar)
+create table tb_categories(id int auto_increment, title varchar)
+create table tb_users(id int auto_increment, username varchar,password varchar,name varchar,gender varchar,status varchar)
+create table tb_roles(id int auto_increment, role varchar)
+create table tb_user_roles(user_id int, role_id int, primary key(user_id, role_id), foreign key (user_id) references tb_users(id), foreign key (role_id) references  tb_roles(id))
